@@ -1,7 +1,9 @@
-/* Configuración General */
+/* Configuración General con los colores de AQUA */
 :root {
-    --azul-aqua: #0077b6;
-    --azul-oscuro: #023e8a;
+    --morado-aqua: #6a0dad; /* Tomado del texto 'AQUA' */
+    --azul-ola: #0077b6;   /* Azul medio de la ola */
+    --azul-oscuro: #023e8a; /* Azul más intenso */
+    --azul-claro: #00b4d8;  /* Azul brillante */
     --blanco: #ffffff;
     --gris-claro: #f4f4f4;
 }
@@ -22,7 +24,7 @@ body {
 /* Header y Navegación */
 header {
     background: var(--blanco);
-    padding: 20px 0;
+    padding: 15px 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
@@ -35,15 +37,28 @@ header {
     align-items: center;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .logo h1 {
     margin: 0;
-    color: var(--azul-aqua);
+    font-size: 24px;
+    color: var(--morado-aqua);
+}
+
+.logo span {
+    color: var(--azul-oscuro);
+    font-weight: normal;
 }
 
 nav ul {
     display: flex;
     list-style: none;
     margin: 0;
+    padding: 0;
 }
 
 nav ul li a {
@@ -53,29 +68,47 @@ nav ul li a {
     font-weight: bold;
 }
 
-/* Hero Section */
+/* Hero Section con gradiente de azules */
 .hero {
     height: 60vh;
-    background: var(--azul-aqua); /* PUEDES CAMBIAR ESTO POR UNA IMAGEN DE FONDO */
+    background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-ola) 50%, var(--azul-claro) 100%);
     color: white;
     display: flex;
     align-items: center;
     text-align: center;
 }
 
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+/* Botón con el morado del logo */
 .btn {
     display: inline-block;
-    background: var(--blanco);
-    color: var(--azul-aqua);
-    padding: 10px 25px;
+    background: var(--morado-aqua);
+    color: var(--blanco);
+    padding: 12px 30px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
     margin-top: 20px;
+    transition: background 0.3s;
 }
 
+.btn:hover {
+    background: var(--azul-oscuro);
+}
+
+/* Secciones de Contenido */
 .section {
     padding: 60px 0;
+}
+
+.section h3 {
+    color: var(--morado-aqua);
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
 .placeholder-box {
@@ -83,4 +116,12 @@ nav ul li a {
     padding: 40px;
     text-align: center;
     background: var(--gris-claro);
+}
+
+/* Footer */
+footer {
+    background: var(--gris-claro);
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
 }
